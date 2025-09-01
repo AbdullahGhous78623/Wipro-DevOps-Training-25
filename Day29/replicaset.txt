@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: abdullah-deployment
+  namespace: abdullah
+  labels:
+    app: abdullah-nginx-dp
+spec:
+  replicas: 3   
+  selector:
+    matchLabels:
+      app: abdullah-nginx-dp
+  template:
+    metadata:
+      labels:
+        app: abdullah-nginx-dp
+    spec:
+      containers:
+        - name: abdullah-nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
