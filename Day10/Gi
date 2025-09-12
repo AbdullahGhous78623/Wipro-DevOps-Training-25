@@ -1,0 +1,13 @@
+# Stage 1: Build JAR using Maven
+FROM maven:3.9.0-openjdk-8 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN ./mvnw clean package -DskipTests
+
+# Stage 2: Runtime image
+FROM openjdk:8-jre-slim
+WORKDIR /app
+COPY --from=build /app/target/devops-integration.jar /app/devops-integration.jar
+EXPOSE 80
+ENTRYPOINT ["java", "-jar", "/app/devops-integration.jar"]
