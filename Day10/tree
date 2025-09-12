@@ -1,0 +1,29 @@
+
+├── Dockerfile
+├── Jenkinsfile
+├── Jenkinsfile1
+├── README.md
+├── akshat.yml
+├── deploymentservice.yaml
+├── file1
+├── kubernetes-cd.hpi
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── truelearning
+    │   │           └── DevopsIntegrationApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       └── application.yml
+    └── test
+        └── java
+            └── com
+                └── truelearning
+                    └── DevopsIntegrationApplicationTests.java
+
+11 directories, 15 files
+root@ip-172-31-21-114:/home/ubuntu/cicdakshat# 
